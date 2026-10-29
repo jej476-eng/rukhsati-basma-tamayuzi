@@ -9,14 +9,13 @@
 const endpoint='https://script.google.com/macros/s/AKfycbwtIuTBpEAIZtIUlCzaIFdC3-hGtbREoWrBfrkyIAtC66KwX9zHFXkeoBha9JiahzZCRw/exec';
 async function loadCount(){const out=document.getElementById('counterValue');out.textContent='جارٍ تحميل العدد…';try{const res=await fetch(endpoint+'?t='+Date.now(),{redirect:'follow'});if(!res.ok)throw Error('http');const data=await res.json();if(!Number.isFinite(Number(data.count)))throw Error('data');out.textContent=Number(data.count).toLocaleString('ar-SA');}catch(e){out.innerHTML='تعذّر عرض العدد تلقائيًا <a href="'+endpoint+'" target="_blank" rel="noopener" style="font-size:14px;display:block">عرض العدد من Google</a>';}}
 function startQuiz(){
+  // Open immediately from the user click to avoid popup blockers.
+  const quiz = window.open('https://fawazhs.sa/pages/p1789681940282.html', '_blank');
+  if (quiz) quiz.opener = null;
+  document.getElementById('countStatus').textContent = 'جارٍ تسجيل المشاركة. إذا لم يفتح الاختبار، استخدمي الرابط البديل أدناه.';
   document.getElementById('countForm').requestSubmit();
-  document.getElementById('landing').hidden=true;
-  document.querySelector('.cover').hidden=true;
-  document.querySelector('.cover-note').hidden=true;
-  document.getElementById('quizPage').hidden=false;
-  window.scrollTo(0,0);
-  setTimeout(loadCount,2500);
+  setTimeout(loadCount, 3000);
 }
 document.addEventListener('DOMContentLoaded',loadCount);
 </script>
-<p style="text-align:center"><a href="https://fawazhs.sa/pages/p1789681940282.html" rel="noopener noreferrer" target="_blank">رابط بديل لفتح الاختبار (لا يسجّل مشاركة)</a></p><section class="card"><h2>رسالتنا لكِ</h2><p>كل خطوة في تطويرك المهني تصنع فرقًا في مسيرتك التعليمية. ثقي بقدراتك، وواصلي التعلم، واجعلي الرخصة المهنية محطة جديدة نحو التميز والإبداع.</p><p style="color:var(--purple);font-weight:800;font-size:20px">معًا نتعلم… معًا نتقدم… معًا نتميز.</p></section></main><div id="quizPage" hidden style="max-width:1050px;margin:20px auto;padding:16px;text-align:center"><h2>اختبار الرخصة المهنية</h2><p>إذا لم يظهر الاختبار داخل الصفحة، اضغطي «فتح الاختبار».</p><a class="btn" href="https://fawazhs.sa/pages/p1789681940282.html" target="_blank" rel="noopener">فتح الاختبار</a><button class="btn" style="margin:8px;background:#e7e0f2" onclick="location.reload()">العودة للمبادرة</button><iframe src="https://fawazhs.sa/pages/p1789681940282.html" title="اختبار الرخصة المهنية" style="width:100%;height:78vh;border:1px solid #e5d9ee;border-radius:15px;margin-top:20px;background:white"></iframe></div><footer><div>الابتدائية الرابعة للتحفيظ بأبها</div><div>مديرة المدرسة / <strong>سراء الشهري</strong></div><div>إعداد وتنفيذ / <strong>الجوهرة المطيري</strong></div><div style="font-size:12px;opacity:.8;margin-top:10px">مبادرة رُخصتي… بصمة تميّزي • بدون موسيقى أو مؤثرات صوتية</div></footer></body></html>
+<p style="text-align:center"><a href="https://fawazhs.sa/pages/p1789681940282.html" rel="noopener noreferrer" target="_blank">رابط بديل لفتح الاختبار (لا يسجّل مشاركة)</a></p><section class="card"><h2>رسالتنا لكِ</h2><p>كل خطوة في تطويرك المهني تصنع فرقًا في مسيرتك التعليمية. ثقي بقدراتك، وواصلي التعلم، واجعلي الرخصة المهنية محطة جديدة نحو التميز والإبداع.</p><p style="color:var(--purple);font-weight:800;font-size:20px">معًا نتعلم… معًا نتقدم… معًا نتميز.</p></section></main><footer><div>الابتدائية الرابعة للتحفيظ بأبها</div><div>مديرة المدرسة / <strong>سراء الشهري</strong></div><div>إعداد وتنفيذ / <strong>الجوهرة المطيري</strong></div><div style="font-size:12px;opacity:.8;margin-top:10px">مبادرة رُخصتي… بصمة تميّزي • بدون موسيقى أو مؤثرات صوتية</div></footer></body></html>
